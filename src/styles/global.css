@@ -4,6 +4,10 @@
 
 html {
   overflow-y: scroll;
+  color-scheme: dark;
+}
+
+html:not(.dark) {
   color-scheme: light;
 }
 
