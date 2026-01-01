@@ -22,6 +22,11 @@ const posts = data.reduce((acc: Acc, post) => {
     return acc;
   }, {});
 
+// Sort posts within each year from newest to oldest (most recent posts appear first)
+Object.keys(posts).forEach(year => {
+  posts[year].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+});
+
 const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a)); 
 ---
 
