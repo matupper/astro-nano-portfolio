@@ -4,6 +4,7 @@ description: "These are my personal notes for Astro and maintaining this site."
 date: 12/31/2025
 draft: false
 ---
+These are my personal notes for Astro and maintaining this site.
 
 ## Getting Started
 
