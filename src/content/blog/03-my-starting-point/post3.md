@@ -6,7 +6,7 @@ draft: false
 ---
 In Fall 2024, I took Intro to Computer Graphics with Mike Bailey. It was my first time learning computer graphics in an academic setting, and over the course of ten weeks we covered a wide range of foundational topics—from a brief history of computer graphics to core OpenGL concepts like lighting, keyframe animation, display lists, and the graphics pipeline.
 
-Through weekly assignments, we worked hands-on with many of the fundamentals: transformations in 3D space, basic lighting models, animation, texture mapping, and introductory shaders. For the final project, we were given the freedom to build something open-ended using the concepts we had learned throughout the term. I chose to create a rudimentary, interactive 3D version of Pac-Man, which combined basic rendering, animation, and user interaction.
+Through weekly assignments, we worked hands-on with many of the fundamentals: transformations in 3D space, basic lighting models, animation, texture mapping, and introductory shaders. For the <a href="/projects/cs450-final-project" target="_blank" rel="noopener noreferrer">final project</a>, we were given the freedom to build something open-ended using the concepts we had learned throughout the term. I chose to create a rudimentary, <a href="/projects/cs450-final-project" target="_blank" rel="noopener noreferrer">interactive 3D version of Pac-Man</a>, which combined basic rendering, animation, and user interaction.
 
 ![Project 1 from CS450](./Proj1.gif)
 
