@@ -1,9 +1,14 @@
 ---
 import Container from "@components/Container.astro";
-import { SITE } from "@consts";
+import { SITE, SOCIALS } from "@consts";
 import BackToTop from "@components/BackToTop.astro";
 
 const year = new Date().getFullYear();
+
+const socialsByName = Object.fromEntries(SOCIALS.map((s) => [s.NAME, s.HREF]));
+const instagramHref = socialsByName.instagram;
+const githubHref = socialsByName.github;
+const linkedinHref = socialsByName.linkedin;
 ---
 
 <footer class="animate">
@@ -14,8 +19,91 @@ const year = new Date().getFullYear();
       </div>
     </div>
     <div class="flex justify-between items-center">
-      <div>
-        &copy; {year} {`|`} {SITE.NAME}
+      <div class="flex items-center gap-2">
+        <div>
+          &copy; {year} {`|`} {SITE.NAME}
+        </div>
+        <div class="flex items-center gap-1">
+          {instagramHref && (
+            <a
+              href={instagramHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${SITE.NAME} on Instagram`}
+              class="group size-8 flex items-center justify-center rounded-full hover:bg-theme-hover-bg-light dark:hover:bg-theme-hover-bg-dark transition-colors duration-300 ease-in-out"
+              title="Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="opacity-80 group-hover:opacity-100 group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4" />
+                <path d="M17.5 6.5h.01" />
+              </svg>
+            </a>
+          )}
+          {githubHref && (
+            <a
+              href={githubHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${SITE.NAME} on GitHub`}
+              class="group size-8 flex items-center justify-center rounded-full hover:bg-theme-hover-bg-light dark:hover:bg-theme-hover-bg-dark transition-colors duration-300 ease-in-out"
+              title="GitHub"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="opacity-80 group-hover:opacity-100 group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"
+              >
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3.1-.4 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5.1 5.1 0 0 0 19.9 1S18.7.7 16 2.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5.1 5.1 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.8c0 5.4 3.3 6.6 6.4 7A3.4 3.4 0 0 0 9 18.1V22" />
+              </svg>
+            </a>
+          )}
+          {linkedinHref && (
+            <a
+              href={linkedinHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${SITE.NAME} on LinkedIn`}
+              class="group size-8 flex items-center justify-center rounded-full hover:bg-theme-hover-bg-light dark:hover:bg-theme-hover-bg-dark transition-colors duration-300 ease-in-out"
+              title="LinkedIn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="opacity-80 group-hover:opacity-100 group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"
+              >
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v2" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          )}
+        </div>
       </div>
       <div class="flex flex-wrap gap-1 items-center">
         <button
