@@ -7,6 +7,9 @@ dist/
 # dependencies
 node_modules/
 
+# generated demo output (copied from src/content/.../demo by scripts/sync-demos.mjs)
+public/demos/
+
 # logs
 npm-debug.log*
 yarn-debug.log*

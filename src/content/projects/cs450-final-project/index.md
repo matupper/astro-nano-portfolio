@@ -2,8 +2,8 @@
 title: "CS450 Final Project"
 description: "My Intro to Graphics Final Project"
 date: "Mar 18 2024"
-demo: ""
-repo: ""
+demoURL: ""
+repoURL: ""
 draft: false
 ---
 ## 3D Pac-Man (OpenGL)

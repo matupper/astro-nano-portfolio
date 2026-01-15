@@ -44,3 +44,15 @@ export function dateRange(startDate: Date, endDate?: Date | string): string {
 
   return `${startMonth}${startYear} - ${endMonth}${endYear}`;
 }
+
+type EntryLike = { collection: string; id: string };
+
+export function entryHref(entry: EntryLike): string {
+  // With Astro Content Layer loaders, entries expose `id` (not `slug`).
+  // Our projects live at `.../<project>/index.md`, so strip the trailing `/index`.
+  if (entry.collection === "projects") {
+    const id = entry.id.replace(/\/index$/, "").toLowerCase();
+    return `/${entry.collection}/${id}`;
+  }
+  return `/${entry.collection}/${entry.id}`;
+}

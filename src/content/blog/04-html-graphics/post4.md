@@ -1,5 +1,5 @@
 ---
-title: "Demystifying 3D Graphics with One Simple Formula"
+title: "Demystifying 3D Graphics: Divide by Z"
 description: "3D graphics from scratch, made with HTML + JS"
 date: "01/03/2026"
 draft: false

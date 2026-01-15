@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { entryHref } from "@lib/utils";
 
 type Props = {
   entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
@@ -8,7 +9,7 @@ type Props = {
 const { entry } = Astro.props;
 ---
 
-<a href={`/${entry.collection}/${entry.slug}`} class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-theme-border-light dark:border-theme-border-dark hover:bg-theme-hover-bg-light dark:hover:bg-theme-hover-bg-dark hover:text-theme-text-heading-light dark:hover:text-theme-text-heading-dark transition-colors duration-300 ease-in-out">
+<a href={entryHref(entry)} class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-theme-border-light dark:border-theme-border-dark hover:bg-theme-hover-bg-light dark:hover:bg-theme-hover-bg-dark hover:text-theme-text-heading-light dark:hover:text-theme-text-heading-dark transition-colors duration-300 ease-in-out">
   <div class="flex flex-col flex-1 truncate">
     <div class="font-semibold">
       {entry.data.title}

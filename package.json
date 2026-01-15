@@ -3,8 +3,11 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
+    "predev": "node scripts/sync-demos.mjs",
     "dev": "astro dev",
     "dev:network": "astro dev --host",
+    "sync:demos": "node scripts/sync-demos.mjs",
+    "prebuild": "node scripts/sync-demos.mjs",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "preview:network": "astro preview --host",
