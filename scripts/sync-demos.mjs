@@ -13,7 +13,12 @@ async function syncDemo({ srcRel, destRel }) {
 
   try {
     // Clean destination so deletions in src are reflected.
-    await fs.rm(dest, { recursive: true, force: true });
+    // Use fs.rmdir for Node 12 compatibility (fs.rm requires Node 14.14+)
+    try {
+      await fs.rmdir(dest, { recursive: true });
+    } catch {
+      // Ignore if doesn't exist
+    }
     await fs.mkdir(dest, { recursive: true });
 
     await copyDirFiltered(src, dest, (filePath) => {
@@ -54,10 +59,13 @@ async function copyDirFiltered(srcDir, destDir, allowPath) {
   );
 }
 
-await Promise.all([
-  syncDemo({
-    srcRel: "src/content/projects/JS-3D-renderer/demo",
-    destRel: "public/demos/js-3d-renderer",
-  }),
-]);
+// Wrap in async IIFE for Node 12 compatibility (no top-level await)
+(async () => {
+  await Promise.all([
+    syncDemo({
+      srcRel: "src/content/projects/JS-3D-renderer/demo",
+      destRel: "public/demos/js-3d-renderer",
+    }),
+  ]);
+})();
 
